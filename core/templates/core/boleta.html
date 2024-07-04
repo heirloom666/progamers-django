@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<h1> Boleta </h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-6 text-right">
+            <h1>
+                Boleta N° {{ boleta.nro_boleta }} de {{ boleta.cliente.usuario.first_name }} {{ boleta.cliente.usuario.last_name }}
+            </h1>
+        </div>
+        <div class="col-6">
+            <div class="row" style="margin-bottom: 30px;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>% Subs</th>
+                            <th>% Oferta</th>
+                            <th>% Desc total</th>
+                            <th>Precio a pagar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>{{ item.bodega.producto.nombre }}</td>
+                            <td>{{ item.precio }}</td>
+                            <td>{{ item.descuento_subscriptor|formatear_porcentaje }}</td>
+                            <td>{{ item.descuento_oferta|formatear_porcentaje }}</td>
+                            <td>{{ item.descuento_total|formatear_porcentaje }}</td>
+                            <td>{{ item.precio_a_pagar }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6"><b>Precio sin IVA</b></td>
+                            <td>{{ boleta.monto_sin_iva|formatear_dinero }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><b>Valor del IVA (19%)</b></td>
+                            <td>{{ boleta.iva|formatear_dinero }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><b>Total a pagar</b></td>
+                            <td>{{ boleta.total_a_pagar|formatear_dinero }}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">
+                                    <img src="{% static 'core/img/vendidos.png' %}" style="width: 75px;">
+                                    <br>
+                                    Vendido
+                                    <br>
+                                    {{ boleta.fecha_venta|formatear_fecha }}
+                                </th>
+                                <th class="text-center">
+                                    <img src="{% static 'core/img/despachados.jpg' %}" style="width: 75px;">
+                                    <br>
+                                    Despachado
+                                    <br>
+                                    {{ boleta.fecha_despacho|formatear_fecha }}
+                                </th>
+                                <th class="text-center">
+                                    <img src="{% static 'core/img/entregados.png' %}" style="width: 75px;">
+                                    <br>
+                                    Entregado
+                                    <br>
+                                    {{ boleta.fecha_entrega|formatear_fecha }}
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

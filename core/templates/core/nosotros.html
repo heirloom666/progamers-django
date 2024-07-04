@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+
+    
+    <main role="main"><!-- Contenido principal de la página -->
+        <div class="container">
+            <section class="text-center mt-5">
+                <h1 class="mb-4">Nosotros</h1>
+                <p class="lead">
+                    Bienvenido a Progamers, tu destino para los mejores juegos de todas las plataformas.
+                </p>
+                <p>
+                    En Progamers, estamos dedicados a proporcionarte una experiencia de juego excepcional. Nos apasiona ofrecerte una amplia selección de juegos de alta calidad para todas las consolas, incluyendo PlayStation, Xbox, Nintendo Switch y PC.
+                </p>
+                <p>
+                    Nuestra misión es brindarte una experiencia de compra sin complicaciones, donde puedas encontrar tus juegos favoritos al mejor precio y con la mayor comodidad. Ya sea que estés buscando los últimos lanzamientos, clásicos atemporales o contenido descargable, estamos aquí para ayudarte a encontrarlo.
+                </p>
+                <p>
+                    Con un equipo de entusiastas de los videojuegos listos para ayudarte, ¡te damos la bienvenida a Progamers y esperamos que disfrutes de tu tiempo con nosotros!
+                </p>
+            </section>
+            <section class="row mt-5"><!-- Espacio para imágenes y cargos -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'core/img/thi.jpg' %}" class="card-img-top h-100" alt="Andres Barria">
+                        <div class="card-body">
+                            <h5 class="card-title">Andres Barria</h5>
+                            <p class="card-text">Administrador</p>
+                            <p class="card-description">Como administrador de nuestra página de videojuegos, lidero el equipo y garantizo una experiencia de usuario excepcional. Colaboro con socios para promover contenido relevante y dirijo la innovación de la plataforma. Mi visión estratégica impulsa el crecimiento y la excelencia. Soy el guardián de la experiencia de juego de nuestros usuarios, manteniendo nuestra plataforma a la vanguardia de la industria.</p>
+                            <a href="correo.html" class="btn btn-outline-success">Enviar correo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'core/img/mark.jpg' %}" class="card-img-top" alt="Jhon Varas">
+                        <div class="card-body">
+                            <h5 class="card-title">Jhon Varas</h5>
+                            <p class="card-text">Programador</p>
+                            <p class="card-description">Como programador en nuestra página de videojuegos, desarrollo y optimizo funciones para mejorar la experiencia del usuario. Colaboro estrechamente con el equipo para implementar nuevas características y resolver problemas técnicos. Mi creatividad y habilidades técnicas contribuyen al crecimiento y la innovación de la plataforma. Estoy comprometido con la excelencia técnica y la calidad del código para mantener nuestra página en la vanguardia de la industria.</p>
+                            <a href="correo.html" class="btn btn-outline-success">Enviar correo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="{% static 'core/img/jhon.jpg' %}" class="card-img-top" alt="Elias Orellana">
+                        <div class="card-body">
+                            <h5 class="card-title">Elias Orellana</h5>
+                            <p class="card-text">Gerente General</p>
+                            <p class="card-description">Como Gerente General de nuestra página de videojuegos, lidero estratégicamente todas las operaciones. Superviso la ejecución de iniciativas clave y el cumplimiento de objetivos comerciales. Colaboro con los equipos para impulsar la innovación y garantizar la excelencia en todos los aspectos de la plataforma. Mi enfoque en el crecimiento y la calidad nos mantiene a la vanguardia de la industria del entretenimiento digital.</p>
+                            <a href="correo.html" class="btn btn-outline-success">Enviar correo</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    </main>
+    <br>
+   
+    
+</body>
+
+{% endblock content %}
+{% block stylesheet %}
+<style>
+  h1 {
+      font-size: x-large;
+      color: green !important;
+      font-weight: bolder;
+      margin-bottom: 20px;
+      text-align: center;
+  }
+</style>
+{% endblock stylesheet %}

@@ -1,0 +1,54 @@
+h1 {
+  font-size: x-large;
+  color: green !important;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+th {
+  vertical-align: top;
+  background-color: lightgray !important;
+}
+
+input, textarea, select {
+  border-color: darkgray !important; /* Cambia "red" al color deseado */
+}
+
+.oscuro {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+
+.texto-verde {
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+.perfil-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc; /* Borde cuadrado */
+  border-radius: 0; /* Sin bordes redondeados */
+}
+
+.usuario-image {
+  max-width: 80px; /* Ajustar tamaño de la imagen de usuario si es necesario */
+  height: auto;
+}
+
+.swal-button--confirm {
+  background-color: #28a745; /* Color verde */
+  color: white; /* Texto blanco */
+  border-color: #28a745; /* Borde verde */
+}
+/* Descomenta el selector div a continuación si quieres ver la diagramación de tu página */
+/* div {
+  border: 1px solid blue;
+} */
+
+
+

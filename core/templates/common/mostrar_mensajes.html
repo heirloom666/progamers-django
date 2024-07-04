@@ -1,0 +1,20 @@
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  
+    var mensajes = `{{ backend_messages }}`;
+    var icon = `{{ backend_message_type }}`;
+  
+    if (mensajes != '') {
+      Swal.fire({
+        title: 'ProGamers Shop te Informa',
+        html: mensajes,
+        icon: icon,
+        confirmButtonText: 'Aceptar',
+        customClass: {
+          confirmButtonText: 'btn-custom-class' 
+        }
+      });
+    }
+  });
+  </script>

@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+<h1> Mis Datos </h1>
+<form id="form" method="POST" enctype="multipart/form-data" class="row">
+  {% csrf_token %}
+
+  <div class="col-sm-4">
+    <!-- AREA DE CUADRO DE IMAGEN: Muestra la Imagen de perfil -->
+    <div style="height: 220px; display: flex; justify-content: center; align-items: center;">
+      <img id="cuadro-imagen" src="{% static 'core/img/sin-imagen.png' %}" style="max-width: 100%; max-height: 100%;">
+    </div>
+    <div class="col-12 mt-2 text-center">
+      <!-- BOTON DE SELECCIONAR IMAGEN: Reemplaza el botón "Seleccionar archivo" por otro con Bootstrap (VER COMENTARIO "BOTON IMAGEN" en script.js) -->
+      <button class="btn btn-outline-secondary" onclick="event.preventDefault(); document.getElementById('id_imagen').click();">Seleccionar imagen</button>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <div class="col-sm-12">
+      {{form_usuario|as_bootstrap_form:'help_text_visible=False' }}
+    </div>
+    <div class="col-sm-12">
+      {{ form_perfil|as_bootstrap_form }}
+    </div>
+
+    <!-- AREA DE BOTONES -->
+    <div class="col-sm-12 mt-3">
+      <button type="submit" class="btn btn-outline-success">Actualizar mis datos</button>
+    </div>
+  </div>
+    
+</form>
+
+{% endblock content %}
+
+{% block script %}
+  <script src="{% static 'core/js/misdatos.js' %}"></script>
+  <script src="{% static 'core/js/imagen.js' %}"></script>
+{% endblock script %}
